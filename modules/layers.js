@@ -1,4 +1,4 @@
-define([ "jquery" ], function(ol) {
+define([ "jquery" ], function($) {
 	var divLayers = null;
 
 	$(document).bind("init-layers", function(event, div) {

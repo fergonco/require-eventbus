@@ -2,12 +2,10 @@ define([ "leaflet" ], function(L) {
 	$(document).bind(
 			"init-map",
 			function(event, div) {
-				var link = document.createElement("link");
-				link.type = "text/css";
-				link.rel = "stylesheet";
-				link.href = "http://cdn.leafletjs.com/"
-						+ "leaflet-0.6.4/leaflet.css";
-				document.getElementsByTagName("head")[0].appendChild(link);
+				$(document).trigger(
+						"css-load",
+						"http://cdn.leafletjs.com/"
+								+ "leaflet-0.6.4/leaflet.css");
 
 				var divMap = $("<div/>").css("width", "100%").css("height",
 						"100%").attr("id", "map");

@@ -1,4 +1,4 @@
-require([ "jquery", "newLayer", "leafletmap", "layers" ], function($, newLayer, map,
+require([ "jquery", "newLayer", "olmap", "layers" ], function($, newLayer, map,
 		layers) {
 	var body = $("body");
 	var top = $("<div/>").attr("id", "top");

@@ -9,24 +9,11 @@ require
 			}
 		});
 
-/*
- * Requirejs does not load css. Either we put it here, either in the HTML.
- */
-var link = document.createElement("link");
-link.type = "text/css";
-link.rel = "stylesheet";
-link.href = "http://ajax.googleapis.com/ajax/libs/"
-		+ "jqueryui/1.10.3/themes/smoothness/jquery-ui.min.css";
-document.getElementsByTagName("head")[0].appendChild(link);
-
-/*
- * Initialize
- */
-require([ "ui" ], function() {
-	console.log("ui installed");
-});
-
-require([ "jquery" ], function($) {
+require([ "jquery", "css-loader", "ui" ], function($) {
+	$(document).trigger(
+			"css-load",
+			"http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/themes/"
+					+ "smoothness/jquery-ui.min.css");
 	$(document).bind("add-layer", function(event) {
 		$("body").append($("<div>").html("amazing design dude!"));
 	});
