@@ -4,8 +4,7 @@ define([ "openlayers", "jquery" ], function(ol, $) {
 	$(document).bind(
 			"init-map",
 			function(event, div) {
-				var divMap = $("<div/>").css("width", "100%").css("height",
-						"100%").attr("id", "map");
+				var divMap = $("<div/>").attr("id", "map");
 				div.append(divMap);
 
 				map = new OpenLayers.Map("map");

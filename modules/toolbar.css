@@ -28,7 +28,8 @@
 	background-color: #000000;
 	height: 50px;
 	z-index: 2000;
-	top: 10px font-size: 10px;
+	top: 10px;
+	font-size: 10px;
 	position: relative;
 	padding-right: 10px;
 }

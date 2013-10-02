@@ -18,6 +18,7 @@ html,body {
 
 #map {
 	height: auto;
+	width: 100%;
 	position: absolute;
 	top: 142px;
 	bottom: 0px;
