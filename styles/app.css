@@ -1,12 +1,24 @@
-#top {
-	
-}
-
-#left {
-	float: left;
-	width: 180px;
+html,body {
+	margin: 0px;
+	height: 100%;
 }
 
 #center {
-	margin-left: 190px;
+	height: 100%;
+}
+
+#header {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 142px;
+	z-index: 1001;
+}
+
+#map {
+	height: auto;
+	position: absolute;
+	top: 142px;
+	bottom: 0px;
 }
