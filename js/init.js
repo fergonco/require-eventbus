@@ -1,8 +1,8 @@
 customization = {
-	"title" : "SNMB Ecuador",
+	"title" : "SNMB Ejemplo",
 	"languages" : {
 		"en" : "English",
-		"fr" : "Fran\u00e7ais",
+		"fr" : "Français",
 		"es" : "Español"
 	},
 	"languageCode" : "en",
