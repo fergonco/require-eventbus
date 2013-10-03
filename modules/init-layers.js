@@ -4,6 +4,7 @@
 define([ "jquery" ], function($) {
 	$(document).trigger("add-layer", {
 		"url" : "http://ovc.catastro.meh.es/Cartografia/WMS/ServidorWMS.aspx",
-		"layerName" : "Catastro"
+		"layerName" : "Catastro",
+		"timestamps" : [ "2000", "2005" ]
 	});
 });

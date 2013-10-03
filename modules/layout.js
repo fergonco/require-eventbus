@@ -1,4 +1,4 @@
-require([ "jquery", "banner", "toolbar", "olmap" ], function($) {
+define([ "jquery", "banner", "toolbar", "olmap" ], function($) {
 	var body = $("body");
 	
 	var header = $("<div/>").attr("id", "header");

@@ -10,7 +10,8 @@ customization = {
 		"legend_button" : "Legend",
 		"sustainable_management" : "Sustainable Forest Management",
 		"redd_plus_registry" : "REDD+ Registry",
-		"changes" : "Changes"
+		"changes" : "Changes",
+		"months" : '["Jan.", "Feb.", "Mar.", "Apr.", "May", "June", "July", "Aug.", "Sep.", "Oct.", "Nov.", "Dec."]'
 	}
 
 };
