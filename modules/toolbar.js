@@ -10,10 +10,7 @@ require([ "jquery" ], function($) {
 							.attr("id", "button_" + language).html(
 									customization.languages[language]);
 					btnLanguage.addClass("blue_button lang_button");
-					console.log(customization.languageCode);
-					console.log(language);
 					if (customization.languageCode == language) {
-						console.log("equals!");
 						btnLanguage.addClass("selected");
 					}
 					divToolbar.append(btnLanguage);
