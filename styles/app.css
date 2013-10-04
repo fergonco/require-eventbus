@@ -1,6 +1,7 @@
 html,body {
 	margin: 0px;
 	height: 100%;
+	cursor: default;
 }
 
 #center {
@@ -22,4 +23,13 @@ html,body {
 	position: absolute;
 	top: 142px;
 	bottom: 0px;
+}
+
+#layers_container {
+	font-size: 10px;
+	left: 10px;
+	position: absolute;
+	top: 215px;
+	width: 250px;
+	z-index: 1100;
 }

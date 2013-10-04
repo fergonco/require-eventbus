@@ -1,4 +1,4 @@
-define([ "jquery", "banner", "toolbar", "olmap" ], function($) {
+define([ "jquery", "banner", "toolbar", "layer-list", "olmap" ], function($) {
 	var body = $("body");
 	
 	var header = $("<div/>").attr("id", "header");
@@ -9,4 +9,8 @@ define([ "jquery", "banner", "toolbar", "olmap" ], function($) {
 	var map = $("<div/>").attr("id", "center");
 	body.append(map);
 	$(document).trigger("init-map", [ map ]);
+	
+	var divLayersContainer = $("<div/>").attr("id", "layers_container");
+	body.append(divLayersContainer);
+	$(document).trigger("init-layerlist", [ divLayersContainer ]);
 });
