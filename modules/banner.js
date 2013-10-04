@@ -1,4 +1,4 @@
-require([ "jquery" ], function($) {
+require([ "jquery", "customization" ], function($, customization) {
 	$(document).trigger("css-load", "modules/banner.css");
 
 	$(document).bind(

@@ -1,9 +1,9 @@
-define([ "jquery", "jquery-ui" ], function($) {
+define([ "jquery", "jquery-ui", "i18n" ], function($, ui, i18n) {
 	var timestamps = [];
 
 	var getLocalizedDate = function(date) {
 		var defaultMonths = [ "Jan.", "Feb.", "Mar.", "Apr.", "May", "June", "July", "Aug.", "Sep.", "Oct.", "Nov.", "Dec." ];
-		var months = customization.messages.months ? eval(customization.messages.months) : defaultMonths;
+		var months = i18n.months ? eval(i18n.months) : defaultMonths;
 		var arr = date.split("-");
 		if (arr[1]) {
 			arr[1] = months[arr[1] - 1];
@@ -15,12 +15,10 @@ define([ "jquery", "jquery-ui" ], function($) {
 		var divTimeSlider = $("<div/>").attr("id", "time_slider_" + id);
 		div.append(divTimeSlider);
 		divTimeSlider.slider({
-			slide : function(event, ui) {
-				divTimeSliderLabel.text(getLocalizedDate(timestamps[ui.value]));
-			},
 			change : function(event, ui) {
 				var d = new Date();
 				d.setISO8601(timestamps[ui.value]);
+				divTimeSliderLabel.text(getLocalizedDate(timestamps[ui.value]));
 				$(document).trigger("time-slider.selection." + id, d);
 			}
 		});
@@ -38,7 +36,7 @@ define([ "jquery", "jquery-ui" ], function($) {
 			}
 
 			divTimeSlider.slider("option", "max", timestamps.length - 1);
-			divTimeSlider.slider("option", "value", timestamps.length - 1);
+			divTimeSlider.slider("value", timestamps.length - 1);
 		});
 	};
 });

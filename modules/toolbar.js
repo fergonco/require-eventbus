@@ -1,4 +1,4 @@
-define([ "jquery", "time-slider" ], function($, timeSlider) {
+define([ "jquery", "time-slider", "customization" ], function($, timeSlider, customization) {
 	$(document).trigger("css-load", "modules/toolbar.css");
 
 	$(document).bind("init-toolbar", function(event, div) {

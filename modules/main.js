@@ -8,7 +8,7 @@ require.config({
 	}
 });
 
-require([ "jquery", "iso8601", "css-loader", "layout", "init-layers" ], function($) {
+require([ "jquery", "iso8601", "css-loader", "layout", "init-layers", "customization" ], function($) {
 	$(document).trigger("css-load", "http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/themes/smoothness/jquery-ui.min.css");
 
 	/*
