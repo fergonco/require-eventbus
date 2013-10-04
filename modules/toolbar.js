@@ -6,6 +6,14 @@ define([ "jquery", "time-slider", "customization" ], function($, timeSlider, cus
 
 		var divTimeSlider = $("<div/>").attr("id", "time_slider_pane");
 		timeSlider("unique-slider", divTimeSlider);
+		{
+			/*
+			 * These events should be in response to the "add-layer" events that
+			 * have a 'timestamps' attribute
+			 */
+			$(document).trigger("time-slider.add-timestamp.unique-slider", "12-Jan-2003");
+			$(document).trigger("time-slider.add-timestamp.unique-slider", "12-Ago-2000");
+		}
 		divToolbar.append(divTimeSlider);
 
 		for (language in customization.languages) {

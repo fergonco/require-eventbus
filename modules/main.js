@@ -8,13 +8,14 @@ require.config({
 	}
 });
 
-require([ "jquery", "iso8601", "css-loader", "layout", "init-layers", "customization" ], function($) {
+require([ "jquery", "iso8601", "css-loader", "layout", "customization" ], function($) {
 	$(document).trigger("css-load", "http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/themes/smoothness/jquery-ui.min.css");
-
 	/*
-	 * A module should receive the add-layer and analyze the timestamps to
-	 * produce these events
+	 * Queries the server and launches add-group and add-layer events
 	 */
-	$(document).trigger("time-slider.add-timestamp.unique-slider", "12-Jan-2003");
-	$(document).trigger("time-slider.add-timestamp.unique-slider", "12-Ago-2000");
+	$(document).trigger("add-layer", {
+		"url" : "http://ovc.catastro.meh.es/Cartografia/WMS/ServidorWMS.aspx",
+		"name" : "Catastro",
+		"timestamps" : [ "2000", "2005" ]
+	});
 });

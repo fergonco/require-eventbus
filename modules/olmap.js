@@ -16,9 +16,9 @@ define([ "openlayers", "jquery" ], function(ol, $) {
 				map.zoomToMaxExtent();
 			});
 
-	$(document).bind("add-layer", function(event, url, layerName) {
-		var layer = new OpenLayers.Layer.WMS("WMS layer", url, {
-			layers : layerName,
+	$(document).bind("add-layer", function(event, layerInfo) {
+		var layer = new OpenLayers.Layer.WMS("WMS layer", layerInfo.url, {
+			layers : layerInfo.name,
 			transparent : true
 		});
 		if (map !== null) {
