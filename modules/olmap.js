@@ -18,9 +18,18 @@ define([ "openlayers", "jquery" ], function(ol, $) {
 			layers : layerInfo.wmsName,
 			transparent : true
 		});
+		layer.id = layerInfo.id;
+		if (!layerInfo.visible) {
+			layer.setVisibility(false);
+		}
 		if (map !== null) {
 			map.addLayer(layer);
 		}
+	});
+
+	$(document).bind("layer-visibility", function(event, layerId, visibility) {
+		var layer = map.getLayer(layerId);
+		layer.setVisibility(visibility);
 	});
 
 });

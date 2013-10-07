@@ -18,31 +18,26 @@ require([ "jquery", "iso8601", "css-loader", "layout", "customization", "error-m
 		"name" : "Basic layers"
 	});
 	$(document).trigger("add-group", {
-		"id" : "spain",
-		"name" : "Spain"
+		"id" : "drc",
+		"name" : "République Démocratique du Congo"
 	});
 	$(document).trigger("add-layer", {
+		"id" : "blumarble",
 		"groupId" : "basic",
-		"url" : "http://vmap0.tiles.osgeo.org/wms/vmap0",
-		"wmsName" : "basic",
-		"name" : "Countries",
-		"timestamps" : [ "2000", "2003" ]
-	});
-	// $(document).trigger("add-layer", {
-	// "url" : "http://www.cartociudad.es/wms/CARTOCIUDAD/CARTOCIUDAD?",
-	// "wmsName" : "FondoUrbano",
-	// "name" : "Regions of Spain",
-	// "infoLink" :
-	// "http://rdc-snsf.org/static/loc/en/html/bluemarble_def.html",
-	// "timestamps" : [ "2000", "2005" ]
-	// });
-	$(document).trigger("add-layer", {
-		"groupId" : "spain",
-		"url" : "http://ovc.catastro.meh.es/Cartografia/WMS/ServidorWMS.aspx",
-		"wmsName" : "Catastro",
-		"name" : "Cadastrial data of Spain",
+		"url" : "http://rdc-snsf.org/diss_geoserver/wms",
+		"wmsName" : "common:blue_marble",
+		"name" : "Blue marble",
 		"infoLink" : "http://rdc-snsf.org/static/loc/en/html/bluemarble_def.html",
-		"timestamps" : [ "2000", "2005" ]
+		"visible" : "true"
+	});
+	$(document).trigger("add-layer", {
+		"id" : "forest_classification",
+		"groupId" : "drc",
+		"url" : "http://rdc-snsf.org/diss_geoserver/wms",
+		"wmsName" : "drc:facet_forest_classification",
+		"name" : "FACET Forest Classification",
+		"timestamps" : [ "2000", "2003" ],
+		"visible" : false
 	});
 
 	$(document).trigger("initial-zoom");

@@ -4,20 +4,6 @@ define([ "jquery" ], function($) {
 
 	$(document).trigger("css-load", "modules/layer-list.css");
 
-	var emulate = function(element) {
-		element.mousedown(function() {
-			element.addClass('mousedown');
-		}).mouseup(function() {
-			element.removeClass('mousedown');
-		}).mouseleave(function() {
-			element.removeClass('in');
-		}).mouseenter(function() {
-			element.addClass('in');
-		}).click(function() {
-			element.toggleClass('checked');
-		});
-	};
-
 	$(document).bind("init-layerlist", function(event, divLayersContainer) {
 		// Should go in layout
 		// var divLayerListSelector = $("<div/>").attr("id",
@@ -51,8 +37,6 @@ define([ "jquery" ], function($) {
 		divLayersContainer.append(divLayers);
 	});
 	$(document).bind("add-group", function(event, groupInfo) {
-		console.log(groupInfo);
-		console.log(groupInfo.id);
 		var h3Title = $("<h3/>").html(groupInfo.name);
 		divLayers.append(h3Title);
 		var tblLayerGroup = $("<table/>");
@@ -72,7 +56,23 @@ define([ "jquery" ], function($) {
 
 			var tdVisibility = $("<td/>").css("width", "16px");
 			var divCheckbox = $("<div/>").addClass("layer_visibility");
-			emulate(divCheckbox);
+			if (layerInfo.visible) {
+				divCheckbox.addClass("checked");
+			}
+			divCheckbox.mousedown(function() {
+				divCheckbox.addClass('mousedown');
+			}).mouseup(function() {
+				divCheckbox.removeClass('mousedown');
+			}).mouseleave(function() {
+				divCheckbox.removeClass('in');
+			}).mouseenter(function() {
+				divCheckbox.addClass('in');
+			}).click(function() {
+				divCheckbox.toggleClass('checked');
+				var checked = divCheckbox.hasClass("checked");
+				$(document).trigger("layer-visibility", [ layerInfo.id, checked ]);
+			});
+
 			tdVisibility.append(divCheckbox);
 
 			trLayer.append(tdVisibility);
