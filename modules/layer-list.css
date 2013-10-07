@@ -8,6 +8,7 @@
 
 #active_layers>table {
 	width: 100%;
+	padding: 0px;
 }
 
 #all_layers {
@@ -19,9 +20,10 @@
 
 #all_layers>table {
 	width: 100%;
+	padding: 0px;
 }
 
-#group_content_table {
+.group_content_table {
 	width: 100%;
 	border-collapse: collapse;
 }
