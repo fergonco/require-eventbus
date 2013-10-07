@@ -3,6 +3,7 @@ require.config({
 	paths : {
 		"jquery" : "http://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min",
 		"jquery-ui" : "http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min",
+		"fancy-box" : "../js/jquery.fancybox.pack",
 		"openlayers" : "http://openlayers.org/dev/OpenLayers",
 		"leaflet" : "http://cdn.leafletjs.com/leaflet-0.6.4/leaflet"
 	}
@@ -10,6 +11,7 @@ require.config({
 
 require([ "jquery", "iso8601", "css-loader", "layout", "customization", "error-management" ], function($) {
 	$(document).trigger("css-load", "http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/themes/smoothness/jquery-ui.min.css");
+	$(document).trigger("css-load", "styles/jquery.fancybox.css");
 	/*
 	 * Queries the server and launches add-group and add-layer events
 	 */

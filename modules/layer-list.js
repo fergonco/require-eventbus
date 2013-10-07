@@ -1,4 +1,4 @@
-define([ "jquery" ], function($) {
+define([ "jquery", "fancy-box" ], function($) {
 
 	var divLayers = null;
 
@@ -60,15 +60,15 @@ define([ "jquery" ], function($) {
 				divCheckbox.addClass("checked");
 			}
 			divCheckbox.mousedown(function() {
-				divCheckbox.addClass('mousedown');
+				divCheckbox.addClass("mousedown");
 			}).mouseup(function() {
-				divCheckbox.removeClass('mousedown');
+				divCheckbox.removeClass("mousedown");
 			}).mouseleave(function() {
-				divCheckbox.removeClass('in');
+				divCheckbox.removeClass("in");
 			}).mouseenter(function() {
-				divCheckbox.addClass('in');
+				divCheckbox.addClass("in");
 			}).click(function() {
-				divCheckbox.toggleClass('checked');
+				divCheckbox.toggleClass("checked");
 				var checked = divCheckbox.hasClass("checked");
 				$(document).trigger("layer-visibility", [ layerInfo.id, checked ]);
 			});
@@ -85,6 +85,13 @@ define([ "jquery" ], function($) {
 			if (layerInfo.hasOwnProperty("infoLink")) {
 				var aLink = $("<a/>").attr("href", layerInfo.infoLink);
 				aLink.addClass("layer_info_button");
+				aLink.fancybox({
+					"closeBtn" : "true",
+					"openEffect" : "elastic",
+					"closeEffect" : "elastic",
+					"type" : "iframe",
+					"overlayOpacity" : 0.5
+				});
 				tdInfo.append(aLink);
 			}
 			trLayer.append(tdInfo);
