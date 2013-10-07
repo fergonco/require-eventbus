@@ -2,13 +2,23 @@
 	position: relative;
 	top: 0;
 	left: 0;
+	width: 100%;
 	display: none;
+}
+
+#active_layers>table {
+	width: 100%;
 }
 
 #all_layers {
 	position: relative;
 	top: 0;
 	left: 0;
+	width: 100%;
+}
+
+#all_layers>table {
+	width: 100%;
 }
 
 #group_content_table {
@@ -27,13 +37,16 @@
 	height: 20px;
 }
 
+td.layer_visibility {
+	width: 16px;
+}
+
 .layer_visibility {
 	width: 16px;
 	height: 16px;
 	background: url(../images/ui-elements.png) no-repeat scroll 0 0
 		transparent;
 	cursor: pointer;
-	width: 16px;
 }
 
 .layer_visibility.in.mousedown {
@@ -55,5 +68,20 @@
 }
 
 .layer_name {
-/* 	color: #FFF; */
+	/* 	color: #FFF; */
+	
+}
+
+.layer_info {
+	width: 16px;
+}
+
+.layer_info_button {
+	background: url("../images/ui-elements.png") no-repeat scroll 0 -130px
+		rgba(0, 0, 0, 0);
+	display: block;
+	height: 16px;
+	padding: 0;
+	text-decoration: none;
+	width: 16px;
 }

@@ -14,8 +14,26 @@ require([ "jquery", "iso8601", "css-loader", "layout", "customization" ], functi
 	 * Queries the server and launches add-group and add-layer events
 	 */
 	$(document).trigger("add-layer", {
-		"url" : "http://ovc.catastro.meh.es/Cartografia/WMS/ServidorWMS.aspx",
-		"name" : "Catastro",
+		"url" : "http://vmap0.tiles.osgeo.org/wms/vmap0",
+		"wmsName" : "basic",
+		"name" : "Countries",
+		"timestamps" : [ "2000", "2003" ]
+	});
+	$(document).trigger("add-layer", {
+		"url" : "http://www.cartociudad.es/wms/CARTOCIUDAD/CARTOCIUDAD?",
+		"wmsName" : "FondoUrbano",
+		"name" : "Regions of Spain",
+		"infoLink" : "http://rdc-snsf.org/static/loc/en/html/bluemarble_def.html",
 		"timestamps" : [ "2000", "2005" ]
 	});
+	// $(document).trigger("add-layer", {
+	// "url" : "http://ovc.catastro.meh.es/Cartografia/WMS/ServidorWMS.aspx",
+	// "wmsName" : "Catastro",
+	// "name": "Cadastrial data of Spain",
+	// "infoLink" :
+	// "http://rdc-snsf.org/static/loc/en/html/bluemarble_def.html",
+	// "timestamps" : [ "2000", "2005" ]
+	// });
+
+	$(document).trigger("initial-zoom");
 });

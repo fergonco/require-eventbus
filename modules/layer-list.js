@@ -59,7 +59,7 @@ define([ "jquery" ], function($) {
 		var tdLegend = $("<td/>").addClass("layer_legend");
 		trLayer.append(tdLegend);
 
-		var tdVisibility = $("<td/>");
+		var tdVisibility = $("<td/>").css("width", "16px");
 		var divCheckbox = $("<div/>").addClass("layer_visibility");
 		emulate(divCheckbox);
 		tdVisibility.append(divCheckbox);
@@ -69,6 +69,14 @@ define([ "jquery" ], function($) {
 		var tdName = $("<td/>").addClass("layer_name");
 		tdName.html(layerInfo.name);
 		trLayer.append(tdName);
+
+		var tdInfo = $("<td/>").addClass("layer_info");
+		if (layerInfo.hasOwnProperty("infoLink")) {
+			var aLink = $("<a/>").attr("href", layerInfo.infoLink);
+			aLink.addClass("layer_info_button");
+			tdInfo.append(aLink);
+		}
+		trLayer.append(tdInfo);
 
 		tblLayerGroup.append(trLayer);
 	});
