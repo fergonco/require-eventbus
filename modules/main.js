@@ -38,7 +38,7 @@ require([ "jquery", "iso8601", "css-loader", "layout", "customization", "error-m
 		"url" : "http://rdc-snsf.org/diss_geoserver/wms",
 		"wmsName" : "drc:facet_forest_classification",
 		"name" : "FACET Forest Classification",
-		"timestamps" : [ "2000", "2003" ],
+		"timestamps" : [ "2001-2-23", "2003-5-12" ],
 		"visible" : false
 	});
 

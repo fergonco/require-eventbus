@@ -2,6 +2,7 @@ html,body {
 	margin: 0px;
 	height: 100%;
 	cursor: default;
+	font: 100% "Trebuchet MS",sans-serif;
 }
 
 #center {

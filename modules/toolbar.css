@@ -52,11 +52,12 @@
 	margin: 0;
 	left: 10px;
 	top: 8px;
-	text-align: center;
+	font-size: 11px;
 }
+
 #time_slider_unique-slider {
 	position: absolute;
-	left: 90px;
+	left: 100px;
 	top: 10px;
 	width: 60px;
 	padding: 0;
