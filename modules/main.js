@@ -10,7 +10,7 @@ require.config({
 });
 
 require([ "jquery", "iso8601", "css-loader", "layout", "customization", "error-management" ], function($) {
-	$(document).trigger("css-load", "http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/themes/smoothness/jquery-ui.min.css");
+	$(document).trigger("css-load", "styles/jquery-ui-1.8.16.custom.css");
 	$(document).trigger("css-load", "styles/jquery.fancybox.css");
 	/*
 	 * Queries the server and launches add-group and add-layer events

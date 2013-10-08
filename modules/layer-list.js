@@ -31,14 +31,18 @@ define([ "jquery", "fancy-box" ], function($) {
 		divLayersContainer.append(divActiveLayers);
 
 		divLayers = $("<div/>").attr("id", "all_layers");
+		divLayers.addClass("ui-accordion-icons");
 		divLayers.accordion({
-			"animate" : false
+			"animate" : false,
+			"collapsible" : true
 		});
 		divLayersContainer.append(divLayers);
 	});
 	$(document).bind("add-group", function(event, groupInfo) {
-		var h3Title = $("<h3/>").html(groupInfo.name);
-		divLayers.append(h3Title);
+		var divTitle = $("<div/>");
+		aTitle = $("<a/>").attr("href", "#").html(groupInfo.name).disableSelection();
+		divTitle.append(aTitle);
+		divLayers.append(divTitle);
 		var tblLayerGroup = $("<table/>");
 		tblLayerGroup.attr("id", "group-content-table-" + groupInfo.id);
 		tblLayerGroup.addClass("group-content-table");
